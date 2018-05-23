@@ -69,9 +69,3 @@ def uves_fits_to_dat(plot=True, file_path=os.getcwd()+'/', save_path=os.getcwd()
 
 
                 
-#test
-uves_fits_to_dat(file_path='../csc_storage/wd0137-349/observations/reflex_end_products/2015-10-13T16:42:39/', save_path='../csc_storage/wd0137-349/spectra')
-    
-    
-    
-
