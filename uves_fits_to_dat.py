@@ -11,6 +11,8 @@ def filewriter(wavelength, flux, error, save_path, filename):
     """
     write the spectrum to file in savepath/file name in space-separated columns of wavelength, flux, flux_error.
     """
+    if save_path[-1] != '/':
+        save_path = save_path+'/'
     if not os.path.exists(save_path):
         os.makedirs(save_path)    
     fl=open((save_path+filename),'w') 
@@ -59,7 +61,7 @@ def uves_fits_to_dat(plot=True, file_path=os.getcwd()+'/', save_path=os.getcwd()
                 e = hdul_e[0].data
                 hdul_e.close()
                 
-                filename = header['OBJECT']+'_'+header['INSTRUME']+'_'+colour+'_'+header['DATE-OBS']+'.dat'
+                filename = header['HIERARCH ESO OBS TARG NAME']+'_'+header['INSTRUME']+'_'+colour+'_'+header['DATE-OBS']+'.dat'
                 filewriter(w, f, e, save_path+colour+'/', filename)
                 
 
